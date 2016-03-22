@@ -7,12 +7,12 @@
   <property name="dist.dir" location="dist" />
   <property name="docs.dir" location="docs" />
 
-  <!-- Deletes the existing build, docs and dist directory-->
+  <!-- Deletes the existing build, docs and dist directory
   <target name="clean">
     <delete dir="${build.dir}" />
     <delete dir="${docs.dir}" />
     <delete dir="${dist.dir}" />
-  </target>
+  </target>-->
 
   <!-- Creates the  build, docs and dist directory-->
   <target name="makedir">
@@ -22,7 +22,7 @@
   </target>
 
   <!-- Compiles the java code (including the usage of library for JUnit -->
-  <target name="compile" depends="clean, makedir">
+  <target name="compile">
     <javac includeantruntime="false" srcdir="${src.dir}" destdir="${build.dir}">
     </javac>
 
@@ -40,7 +40,7 @@
 
   <!--Creates the deployable jar file  -->
   <target name="jar" depends="compile">
-    <jar destfile="${dist.dir}\de.vogella.build.test.ant.jar" basedir="${build.dir}">
+    <jar destfile="${dist.dir}\git1233.jar" basedir="${build.dir}">
       <manifest>
         <attribute name="Main-Class" value="test.Main" />
       </manifest>
